@@ -1,28 +1,59 @@
-/* Reset CSS for cross-browser consistency */
+/* Reset CSS for consistency across browsers */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Global Body Styles */
+/* Global Body Styling */
 body {
-  font-family: 'Merriweather', serif; /* A classy and readable font */
-  background-color: #ffffff; /* Clean white background */
-  display: flex; /* Center the content vertically and horizontally */
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Full viewport height */
-  overflow: hidden; /* Prevent scrolling */
+  font-family: 'Merriweather', serif; /* Elegant serif font for headings */
+  background-color: #fdfbf7; /* Soft white background with a slight warmth */
+  color: #5b4636; /* Neutral, warm brown for text */
+  line-height: 1.8;
 }
 
-/* Wrapper Styling for Centered Layout */
+/* Wrapper Styling for Content Boxes */
 .wrapper {
-  max-width: 1200px;
+  width: 90%; /* Flexible width */
+  max-width: 1200px; /* Limit maximum width */
+  margin: 20px auto; /* Center with spacing from top */
   padding: 30px;
-  border: 1px solid #e0e0e0; /* Subtle border */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  background-color: #ffffff; /* Clean white background for content */
+  border: 1px solid #e4d7c3; /* Subtle light-brown border */
   border-radius: 10px; /* Rounded corners */
-  background-color: #ffffff; /* Solid white background for content */
-  text-align: center; /* Center-align text inside the wrapper */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05); /* Light shadow for depth */
+}
+
+/* Heading Styles */
+h1, h2 {
+  font-family: 'Merriweather', serif; /* Classic serif font for headings */
+  color: #4e382a; /* Deeper brown for emphasis */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Paragraph Styles */
+p {
+  font-family: 'Roboto', sans-serif; /* Readable sans-serif font for paragraphs */
+  font-size: 18px;
+  color: #6d5541; /* Light brown */
+  margin-bottom: 20px;
+}
+
+/* Links and Buttons */
+a, button {
+  font-family: 'Roboto', sans-serif; /* Ensure consistency with text */
+  text-decoration: none;
+  color: #ffffff; /* White text for contrast */
+  background-color: #a6896f; /* Light brown for buttons */
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+a:hover, button:hover {
+  background-color: #8e7159; /* Darker brown for hover effect */
 }

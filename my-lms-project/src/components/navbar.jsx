@@ -2,47 +2,41 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const styles = {
+    navbar: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      padding: "15px 20px",
+      backgroundColor: "#a6896f", /* Light brown for navbar */
+      color: "#ffffff",
+    },
+    link: {
+      textDecoration: "none",
+      color: "#ffffff",
+      marginLeft: "15px",
+      transition: "color 0.3s",
+    },
+  };
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-      <div className="wrapper">
-        <Link className="navbar-brand fw-bold fs-4" to="/" style={{ fontFamily: "'Merriweather', serif" }}>
-          LMS Infotact
+    <nav style={styles.navbar}>
+      <Link to="/" style={{ ...styles.link, fontWeight: "bold" }}>
+        LMS Infotact
+      </Link>
+      <div>
+        <Link to="/" style={styles.link}>
+          Home
         </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to="/">
-                Home
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/about">
-                About
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/courses">
-                Courses
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link btn btn-primary text-white px-3" to="/form">
-                Enroll
-              </Link>
-            </li>
-          </ul>
-        </div>
+        <Link to="/about" style={styles.link}>
+          About
+        </Link>
+        <Link to="/courses" style={styles.link}>
+          Courses
+        </Link>
+        <Link to="/form" style={styles.link}>
+          Enroll
+        </Link>
       </div>
     </nav>
   );

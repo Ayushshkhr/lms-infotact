@@ -1,97 +1,73 @@
 import React, { useState } from "react";
 
 const Form = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    course: "",
-    gender: "",
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Enrollment Successful!");
+    setSubmitted(true);
   };
 
   return (
-    <div className="wrapper">
-      <h1 className="mb-4 fw-bold">Enrollment Form</h1>
-      <form onSubmit={handleSubmit} className="p-4 shadow-sm bg-light rounded">
-        <div className="mb-3">
-          <label htmlFor="name" className="form-label fw-bold">
-            Full Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            className="form-control"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
+    <div style={{ maxWidth: "500px", margin: "auto", padding: "20px", borderRadius: "8px", boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)", backgroundColor: "#fff" }}>
+      <h2 style={{ textAlign: "center", color: "#6D4C41" }}>Get in Touch</h2>
+      <p style={{ textAlign: "center", color: "#555" }}>We'd love to hear from you! Fill out the form below and our team will get back to you shortly.</p>
+      
+      {submitted ? (
+        <div style={{ textAlign: "center", color: "green", fontSize: "18px", fontWeight: "bold", marginTop: "20px" }}>
+          Thank you for reaching out! We'll contact you soon.
         </div>
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label fw-bold">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            className="form-control"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="course" className="form-label fw-bold">
-            Select Course
-          </label>
-          <select
-            id="course"
-            name="course"
-            className="form-select"
-            value={formData.course}
-            onChange={handleChange}
-            required
-          >
-            <option value="" disabled>
-              Choose...
-            </option>
-            <option value="React Basics">React Basics</option>
-            <option value="Advanced JavaScript">Advanced JavaScript</option>
-            <option value="Web Development">Web Development</option>
-          </select>
-        </div>
-        <div className="mb-3">
-          <label htmlFor="gender" className="form-label fw-bold">
-            Gender
-          </label>
-          <select
-            id="gender"
-            name="gender"
-            className="form-select"
-            value={formData.gender}
-            onChange={handleChange}
-            required
-          >
-            <option value="" disabled>
-              Select...
-            </option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
-            <option value="Prefer not to say">Prefer not to say</option>
-          </select>
-        </div>
-        <button type="submit" className="btn btn-primary w-100">
-          Submit
-        </button>
-      </form>
+      ) : (
+        <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column" }}>
+          <div style={{ marginBottom: "15px" }}>
+            <label style={{ display: "block", fontWeight: "bold", marginBottom: "5px" }}>Name</label>
+            <input 
+              type="text" 
+              name="name" 
+              value={formData.name} 
+              onChange={handleChange} 
+              required 
+              placeholder="Enter your name" 
+              style={{ width: "100%", padding: "10px", border: "1px solid #ccc", borderRadius: "5px" }}
+            />
+          </div>
+
+          <div style={{ marginBottom: "15px" }}>
+            <label style={{ display: "block", fontWeight: "bold", marginBottom: "5px" }}>Email</label>
+            <input 
+              type="email" 
+              name="email" 
+              value={formData.email} 
+              onChange={handleChange} 
+              required 
+              placeholder="Enter your email" 
+              style={{ width: "100%", padding: "10px", border: "1px solid #ccc", borderRadius: "5px" }}
+            />
+          </div>
+
+          <div style={{ marginBottom: "15px" }}>
+            <label style={{ display: "block", fontWeight: "bold", marginBottom: "5px" }}>Message</label>
+            <textarea 
+              name="message" 
+              value={formData.message} 
+              onChange={handleChange} 
+              required 
+              placeholder="Type your message here..." 
+              style={{ width: "100%", padding: "10px", border: "1px solid #ccc", borderRadius: "5px", height: "100px" }}
+            />
+          </div>
+
+          <button type="submit" style={{ backgroundColor: "#6D4C41", color: "white", padding: "10px 15px", border: "none", borderRadius: "5px", cursor: "pointer", fontSize: "16px" }}>
+            Send Message
+          </button>
+        </form>
+      )}
     </div>
   );
 };

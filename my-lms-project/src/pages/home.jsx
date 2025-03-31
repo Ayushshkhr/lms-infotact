@@ -4,11 +4,16 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className="wrapper">
-      <h1 className="display-4 fw-bold">Welcome to Our LMS Platform</h1>
-      <p className="lead text-muted">
-        Transform your learning experience with professional tools and engaging courses.
+      <h1>Welcome to LMS Infotact</h1>
+      <p>
+        Dive into our world of knowledge and skills. We offer courses crafted with precision and delivered by industry
+        experts to ensure your growth.
       </p>
-      <Link className="btn btn-primary btn-lg" to="/courses">
+      <p>
+        Whether you're looking to change careers or sharpen existing skills, our light-brown-themed platform provides you
+        with the perfect blend of warmth and professionalism.
+      </p>
+      <Link to="/courses" className="btn btn-primary">
         Explore Courses
       </Link>
     </div>

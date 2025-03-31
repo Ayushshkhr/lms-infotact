@@ -3,23 +3,34 @@ import { Link } from "react-router-dom";
 
 const Courses = () => {
   const courses = [
-    { title: "React Basics", description: "Learn the fundamentals of React.js." },
-    { title: "Advanced JavaScript", description: "Master JavaScript concepts for efficient coding." },
-    { title: "Web Development", description: "Become a full-stack web developer with hands-on projects." },
+    {
+      title: "React Basics",
+      description: "Learn the building blocks of React.js to create dynamic web applications.",
+    },
+    {
+      title: "Advanced JavaScript",
+      description: "Dive into advanced concepts and techniques for robust programming.",
+    },
+    {
+      title: "UI/UX Design",
+      description: "Craft user-friendly and visually appealing digital experiences.",
+    },
+    {
+      title: "Data Science",
+      description: "Discover data analytics and machine learning techniques for actionable insights.",
+    },
   ];
 
   return (
     <div className="wrapper">
-      <h1 className="mb-4 fw-bold" style={{ fontFamily: "'Merriweather', serif" }}>
-        Explore Our Courses
-      </h1>
+      <h1>Explore Our Courses</h1>
       <div className="row">
         {courses.map((course, index) => (
           <div className="col-md-4 mb-4" key={index}>
-            <div className="card shadow-sm h-100">
+            <div className="card shadow-sm">
               <div className="card-body">
-                <h5 className="card-title fw-bold">{course.title}</h5>
-                <p className="card-text text-muted">{course.description}</p>
+                <h5 className="card-title">{course.title}</h5>
+                <p className="card-text">{course.description}</p>
                 <Link to="/form" className="btn btn-primary">
                   Enroll Now
                 </Link>
