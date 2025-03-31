@@ -1,0 +1,28 @@
+/* Reset CSS for cross-browser consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Body Styles */
+body {
+  font-family: 'Merriweather', serif; /* A classy and readable font */
+  background-color: #ffffff; /* Clean white background */
+  display: flex; /* Center the content vertically and horizontally */
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Wrapper Styling for Centered Layout */
+.wrapper {
+  max-width: 1200px;
+  padding: 30px;
+  border: 1px solid #e0e0e0; /* Subtle border */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  border-radius: 10px; /* Rounded corners */
+  background-color: #ffffff; /* Solid white background for content */
+  text-align: center; /* Center-align text inside the wrapper */
+}
